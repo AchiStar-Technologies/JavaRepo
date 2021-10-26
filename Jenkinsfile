@@ -11,14 +11,14 @@ pipeline {
             git 'https://github.com/AchiStar-Technologies/JavaRepo.git' 
          }
       } 
-      stage('Building our image') { 
+      stage('Building Docker Image') { 
          steps { 
             script { 
                dockerImage = docker.build registry + ":$BUILD_NUMBER" 
             }
          } 
       }
-      stage('Deploy our image') { 
+      stage('Deploy Docker image') { 
          steps { 
             script { 
                docker.withRegistry( '', registryCredential ) { 
