@@ -13,7 +13,8 @@ pipeline {
       } 
       stage('Building Docker Image') { 
          steps { 
-            script { 
+            script {
+               echo "BUILD_NUMBER ====== $BUILD_NUMBER"
                dockerImage = docker.build registry + ":$BUILD_NUMBER" 
             }
          } 
