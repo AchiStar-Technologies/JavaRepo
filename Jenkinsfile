@@ -11,10 +11,6 @@ pipeline {
             git 'https://github.com/AchiStar-Technologies/JavaRepo.git' 
          }
       }
-      stage('Initialize') {
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-      }
       stage('Building Docker Image') { 
          steps { 
             script {
