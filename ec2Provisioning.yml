@@ -1,1 +1,19 @@
-ff
+---
+#Provision ecs machines
+- name: EC2 provisioning
+  hosts: localhost
+  tasks:
+  - name: launching AWS instance using Ansible
+    ec2:
+      key_name: aws_instance_Ansible
+      instance_type: t2.micro
+      image: ami-0747bdcabd34c712a
+      region: us-east-2
+      wait: yes
+      group: Ansible
+      count: 2
+      vpc_subnet_id: default
+      assign_public_ip: yes
+      aws_access_key: "ASIAWWTSZAEJ64C7O6XQ"
+      aws_secret_key: "NtX0/4IVcdLNGRAyYtgNKaTmwaRXYM5K9Bh4Bxjg"
+      security_token: "FwoGZXIvYXdzEPL//////////wEaDOgqfpuJzuBZRKu3miKxAXGdUxKnfAE4WnJYh+j8qEp2XZCpCPD4dFnjVgGDJtoGekHkk7dbWaSF4TXwbvJhYUVqYKycJaKIg3Kzge9PaFJD2SlB8/6pInYIHrz7uYUigJqKC10Zwt1ykYMgy8j3QKZ9bSmK2doY8IXK9eSH7mUL4sbYNDnPBWUvVopkhz/o55/OD+R8/HB4DdkRhJc9CWj/W+NrJf33UCy6fugmpbBnm0Usk1p++3fzmiIa0FntBii50eCLBjItw8k4k/bfm1kjYOLTsnt4gPo93eLkGkvRmhDabPaiIhciZAYNrEKqKWcA1GRL"
