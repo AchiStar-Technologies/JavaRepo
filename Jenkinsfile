@@ -15,7 +15,8 @@ pipeline {
          steps { 
             script {
                echo "BUILD_NUMBER ====== $BUILD_NUMBER"
-               dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+               dockerImage = docker.build registry + ":$BUILD_NUMBER"
+               echo "GOT HERE"
             }
          } 
       }
